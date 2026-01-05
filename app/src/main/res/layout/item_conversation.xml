@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:padding="12dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/conversation_profile"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/profile" />
+
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/conversation_profile"
+        android:layout_marginStart="12dp"
+        android:text="Username"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_alignTop="@id/conversation_profile" />
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/conversation_profile"
+        android:layout_marginStart="12dp"
+        android:layout_below="@id/tvUsername"
+        android:text="Online"
+        android:textSize="13sp"
+        android:textColor="#888888" />
+
+    <View
+        android:id="@+id/online_dot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignTop="@id/tvUsername"
+        android:layout_toEndOf="@id/tvUsername"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/online_indicator_gray"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notification_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Notification_following"
+    android:background="@color/white"
+    android:layout_marginTop="40dp">
+
+
+<LinearLayout
+        android:id="@+id/tab_section"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/tab_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tab_following"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Following"
+                android:textColor=" @color/main_color"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"
+                />
+
+            <TextView
+                android:id="@+id/tab_you"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="You"
+                android:textColor=" @color/main_color"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/active_tab_indicator"
+            android:layout_width="180dp"
+            android:layout_height="3dp"
+            android:layout_marginStart="0dp"
+            android:background=" @color/main_color" />
+
+        <RelativeLayout
+            android:id="@+id/tab_indicators_container"
+            android:layout_width="match_parent"
+            android:layout_height="3dp">
+
+            <View
+                android:id="@+id/tab_background_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/notification_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/notification_content_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <!-- Karennne liked posts notification -->
+            <LinearLayout
+                android:id="@+id/karennne_likes_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/karennne_profile_image"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/story1"
+                    app:civ_border_color="#DD2A7B"
+                    app:civ_border_width="2dp" />
+
+                <LinearLayout
+                    android:id="@+id/karennne_text_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/karennne_activity_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="karennne liked 3 posts  "
+                        android:textSize="14sp"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/karennne_time_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3h"
+                        android:textSize="13sp"
+                        android:textColor="#606060"
+                        android:layout_marginTop="0dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/karennne_liked_posts_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="50dp"
+                android:paddingVertical="0dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/karennne_liked_post_1"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/p_post2"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+                <ImageView
+                    android:id="@+id/karennne_liked_post_2"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/p_post1"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+
+                <ImageView
+                    android:id="@+id/karennne_liked_post_3"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/p_post3"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- Multiple users liked post notification -->
+            <LinearLayout
+                android:id="@+id/multiple_likes_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <FrameLayout
+                    android:id="@+id/multiple_profiles_container"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/kiero_d_profile_image"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="start|top"
+                        android:src="@drawable/story3"
+                        app:civ_border_color="#FFFFFF"
+                        app:civ_border_width="2dp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/zackjohn_profile_image"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="end|bottom"
+                        android:src="@drawable/story2"
+                        app:civ_border_color="#FFFFFF"
+                        app:civ_border_width="2dp" />
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/multiple_likes_text_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/multiple_likes_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="kiero_d_zackjohn_and_criag_love_likedjoshua_l_photo"
+                        android:textSize="14sp"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/multiple_likes_post_image"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/p_post5"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- Comment mention notification -->
+            <LinearLayout
+                android:id="@+id/comment_mention_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="top"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/craig_love_profile_image"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/p3"
+                    app:civ_border_color="#DD2A7B"
+                    app:civ_border_width="2dp" />
+
+                <LinearLayout
+                    android:id="@+id/comment_content_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/comment_mention_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="kioron_d started following "
+                        android:textSize="14sp"
+                        android:textColor="@color/black" />
+
+                    <RelativeLayout
+                        android:id="@+id/comment_time_container"
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="0dp">
+
+                        <TextView
+                            android:id="@+id/comment_username_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="cariage_love."
+                            android:textSize="14sp"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/comment_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/comment_username_text"
+                            android:text="4h"
+                            android:textSize="14sp"
+                            android:textColor="@color/black" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Craig love liked posts notification -->
+            <LinearLayout
+                android:id="@+id/craig_love_likes_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/craig_love_profile_image_2"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/dm_image_kiero"
+                    app:civ_border_color="#DD2A7B"
+                    app:civ_border_width="2dp" />
+
+                <LinearLayout
+                    android:id="@+id/craig_love_text_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/craig_love_activity_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="craig_love liked 8 posts  "
+                        android:textSize="14sp"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/craig_love_time_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3h"
+                        android:textSize="13sp"
+                        android:textColor="#606060"
+                        android:layout_marginTop="0dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/craig_love_liked_posts_container_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:layout_marginStart="50dp"
+                android:paddingVertical="0dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/craig_love_liked_post_1"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/p_post1"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+                <ImageView
+                    android:id="@+id/craig_love_liked_post_2"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/p_post2"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+
+                <ImageView
+                    android:id="@+id/craig_love_liked_post_3"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/p_post3"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+
+                <ImageView
+                    android:id="@+id/craig_love_liked_post_4"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/p_post4"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+                <ImageView
+                    android:id="@+id/craig_love_liked_post_5"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/p_post5"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+
+                <ImageView
+                    android:id="@+id/craig_love_liked_post_6"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/p_post6"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/craig_love_liked_posts_container_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:layout_marginStart="50dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="0dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/craig_love_liked_post_7"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/p_post7"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+                <ImageView
+                    android:id="@+id/craig_love_liked_post_8"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/p_post8"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- Additional multiple likes notifications (repeats) -->
+            <LinearLayout
+                android:id="@+id/multiple_likes_container_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <FrameLayout
+                    android:id="@+id/multiple_profiles_container_2"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/kiero_d_profile_image_2"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="start|top"
+                        android:src="@drawable/dm_image_kiero"
+                        app:civ_border_color="#FFFFFF"
+                        app:civ_border_width="2dp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/zackjohn_profile_image_2"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="end|bottom"
+                        android:src="@drawable/story3"
+                        app:civ_border_color="#FFFFFF"
+                        app:civ_border_width="2dp" />
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/multiple_likes_text_container_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/multiple_likes_text_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="kiero_d_zackjohn_and_criag_love_likedjoshua_l_photo"
+                        android:textSize="14sp"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/multiple_likes_post_image_2"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/p_post4"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/multiple_likes_container_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <FrameLayout
+                    android:id="@+id/multiple_profiles_container_3"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/kiero_d_profile_image_3"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="start|top"
+                        android:src="@drawable/story6"
+                        app:civ_border_color="#FFFFFF"
+                        app:civ_border_width="2dp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/zackjohn_profile_image_3"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="end|bottom"
+                        android:src="@drawable/story5"
+                        app:civ_border_color="#FFFFFF"
+                        app:civ_border_width="2dp" />
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/multiple_likes_text_container_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/multiple_likes_text_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="kiero_d_zackjohn_and_criag_love_likedjoshua_l_photo"
+                        android:textSize="14sp"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/multiple_likes_post_image_3"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/profile"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- Additional karennne liked posts notification -->
+            <LinearLayout
+                android:id="@+id/karennne_likes_container_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/karennne_profile_image_2"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/story1"
+                    app:civ_border_color="#DD2A7B"
+                    app:civ_border_width="2dp" />
+
+                <LinearLayout
+                    android:id="@+id/karennne_text_container_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/karennne_activity_text_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="karennne liked 3 posts  "
+                        android:textSize="14sp"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/karennne_time_text_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3h"
+                        android:textSize="13sp"
+                        android:textColor="#606060"
+                        android:layout_marginTop="0dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/karennne_liked_posts_container_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="50dp"
+                android:paddingVertical="0dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/karennne_liked_post_4"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/dm_image_kiero"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+                <ImageView
+                    android:id="@+id/karennne_liked_post_5"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/story6"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+
+                <ImageView
+                    android:id="@+id/karennne_liked_post_6"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/story3"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- Additional comment mention notification -->
+            <LinearLayout
+                android:id="@+id/comment_mention_container_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="top"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/craig_love_profile_image_3"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/story6"
+                    app:civ_border_color="#DD2A7B"
+                    app:civ_border_width="2dp" />
+
+                <LinearLayout
+                    android:id="@+id/comment_content_container_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/comment_mention_text_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="kioron_d started following "
+                        android:textSize="14sp"
+                        android:textColor="@color/black" />
+
+                    <RelativeLayout
+                        android:id="@+id/comment_time_container_2"
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="0dp">
+
+                        <TextView
+                            android:id="@+id/comment_username_text_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="cariage_love."
+                            android:textSize="14sp"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/comment_time_text_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/comment_username_text_2"
+                            android:text="4h"
+                            android:textSize="14sp"
+                            android:textColor="@color/black" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bottom_margin"
+                android:layout_marginBottom="10dp">
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/home_icon"
+            android:layout_margin="16dp"/>
+
+        <ImageView
+            android:id="@+id/nav_search"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/search_icon"
+            android:layout_margin="16dp"/>
+        <ImageView
+            android:id="@+id/previewImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"/>
+        <ImageView
+            android:id="@+id/nav_reel"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/reel_icon"
+            android:layout_margin="16dp"/>
+
+
+        <ImageView
+            android:id="@+id/nav_heart"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/like_icon_filled"
+            android:layout_margin="16dp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/nav_profile"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/profile"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@android:color/holo_red_dark"
+            android:layout_margin="16dp"/>
+    </LinearLayout>
+</LinearLayout>

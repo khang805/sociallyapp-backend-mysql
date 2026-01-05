@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/friendAvatar"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/profile" />
+
+    <View
+        android:id="@+id/onlineIndicator"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_alignBottom="@id/friendAvatar"
+        android:layout_alignEnd="@id/friendAvatar"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/circle_green"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/friendUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/friendAvatar"
+        android:layout_marginStart="12dp"
+        android:layout_centerVertical="true"
+        android:text="Username"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/cameraIcon"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/camera_used_in_dm"
+        android:alpha="0.5" />
+
+</RelativeLayout>
+

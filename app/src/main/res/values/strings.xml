@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">socially</string>
+    <string name="title_activity_other_profile">other_profile</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <!-- Strings used by Search_page / user_item -->
+    <string name="send_request">Send Request</string>
+    <string name="you_text">You</string>
+    <string name="following_text">Following</string>
+    <string name="requested_text">Requested</string>
+    <string name="sending_text">Sending...</string>
+</resources>

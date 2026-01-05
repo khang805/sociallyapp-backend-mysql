@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Main_feed">
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@android:color/white"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/camera"
+            android:layout_width="49dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/camera_top" />
+        <ImageView
+            android:id="@+id/captured_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="20dp"/>
+
+
+        <TextView
+            android:id="@+id/app_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Socially"
+            android:textSize="25dp"
+            android:textStyle="italic"
+            android:textColor="#9B5A5A"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"/>
+        <ImageView
+            android:id="@+id/top_share"
+            android:layout_width="32dp"
+            android:layout_height="40dp"
+            android:src="@drawable/share_top"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true" />
+
+        <ImageView
+            android:id="@+id/top_package"
+            android:layout_width="49dp"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/top_share"
+            android:src="@drawable/package_top"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <!-- Stories Section -->
+    <HorizontalScrollView
+        android:id="@+id/stories_section"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_below="@id/top_bar"
+        android:scrollbars="none"
+        android:padding="12dp"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:id="@+id/story_setup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <!-- Stories will be dynamically added here -->
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <!-- RecyclerView for Posts -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPosts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/stories_section"
+        android:layout_above="@id/bottom_bar"
+        android:padding="8dp" />
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/emptyStateFeed"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/stories_section"
+        android:layout_above="@id/bottom_bar"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/home_icon"
+            android:alpha="0.3"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Posts Yet"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="When you make friends and they post,\nyou'll see their posts here."
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/home_icon_filled"
+            android:layout_margin="16dp"/>
+
+        <ImageView
+            android:id="@+id/nav_search"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/search_icon"
+            android:layout_margin="16dp"/>
+        <ImageView
+            android:id="@+id/previewImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"/>
+        <ImageView
+            android:id="@+id/nav_reel"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/reel_icon"
+            android:layout_margin="16dp"/>
+
+
+        <ImageView
+            android:id="@+id/nav_heart"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/like_icon"
+            android:layout_margin="16dp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/nav_profile"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/profile"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@android:color/holo_red_dark"
+            android:layout_margin="16dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

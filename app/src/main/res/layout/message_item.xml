@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/messageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Message text"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:background="@drawable/message_bubble"
+            android:padding="12dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp" />
+
+        <ImageView
+            android:id="@+id/messageImage"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/message_bubble"
+            android:padding="4dp" />
+
+        <LinearLayout
+            android:id="@+id/sharedPostContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="8dp"
+            android:elevation="2dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/sharedPostImage"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:background="#F0F0F0" />
+
+            <TextView
+                android:id="@+id/sharedPostCaption"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Caption"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:34"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_below="@id/messageText"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/messageText"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp">
+
+            <ImageButton
+                android:id="@+id/editButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_edit"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:layout_marginEnd="4dp"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/deleteButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_delete"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

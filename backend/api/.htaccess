@@ -1,0 +1,25 @@
+# Enable CORS for mobile app
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+
+# Enable error reporting for development
+php_flag display_errors On
+php_value error_reporting E_ALL
+
+# Set maximum upload file size (adjust as needed)
+php_value upload_max_filesize 50M
+php_value post_max_size 50M
+php_value max_execution_time 300
+php_value max_input_time 300
+
+# Protect config directory
+<FilesMatch "database\.php">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Pretty URLs (optional)
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
