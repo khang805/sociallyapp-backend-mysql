@@ -4,25 +4,25 @@ Socially is a comprehensive social networking application built natively for And
 Core Features
 Socially delivers a complete social media experience with a strong focus on performance, security, and usability:
 
- Secure Authentication: Seamless and secure user sign-up and sign-in. Session management is handled via a custom SessionManager with token-based authentication.
+🔐 Secure Authentication: Seamless and secure user sign-up and sign-in. Session management is handled via a custom SessionManager with token-based authentication.
 
- Dynamic User Profiles: Fully-featured user profiles displaying profile pictures, bios, and real-time follower/following statistics.
+👤 Dynamic User Profiles: Fully-featured user profiles displaying profile pictures, bios, and real-time follower/following statistics.
 
- Follow System: Users can follow and unfollow others to curate a personalized content feed.
+🤝 Follow System: Users can follow and unfollow others to curate a personalized content feed.
 
- Rich Content Feed: Users can create posts with images and captions. The home feed intelligently aggregates posts from followed users.
+📝 Rich Content Feed: Users can create posts with images and captions. The home feed intelligently aggregates posts from followed users.
 
- Social Engagement: Interactive features allowing users to like and comment on posts.
+❤️ Social Engagement: Interactive features allowing users to like and comment on posts.
 
- Real-Time Messaging: One-on-one private messaging powered by a dedicated backend service.
+💬 Real-Time Messaging: One-on-one private messaging powered by a dedicated backend service.
 
- Video Calling: Integrated high-quality, real-time video calls using the Agora RTC SDK.
+📞 Video Calling: Integrated high-quality, real-time video calls using the Agora RTC SDK.
 
- User Search: An efficient search feature to discover and connect with other users.
+🔍 User Search: An efficient search feature to discover and connect with other users.
 
- Offline-First Capabilities: Content is cached locally using a Room (SQLite) database, ensuring the app remains functional without an internet connection.
+✈️ Offline-First Capabilities: Content is cached locally using a Room (SQLite) database, ensuring the app remains functional without an internet connection.
 
- Background Operations: Offline actions (such as sending messages or liking posts) are queued via WorkManager and synced reliably once network connectivity is restored.
+🔄 Background Operations: Offline actions (such as sending messages or liking posts) are queued via WorkManager and synced reliably once network connectivity is restored.
 
 Architecture & Tech Stack
 This project adheres to the MVVM (Model-View-ViewModel) architecture, ensuring a clean separation of concerns between the UI, business logic, and data layers.
@@ -49,7 +49,7 @@ Backend & Networking:
 
 Architecture: RESTful APIs backed by a MySQL database.
 
-Retrofit & OkHttp: robust HTTP client for API communication, featuring custom interceptors for authentication and logging.
+Retrofit & OkHttp: Robust HTTP client for API communication, featuring custom interceptors for authentication and logging.
 
 Real-time Communication:
 
