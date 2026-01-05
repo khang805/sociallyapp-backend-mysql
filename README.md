@@ -59,7 +59,7 @@ Follow these instructions to set up the project locally for development and test
 * **Android Studio:** Version Iguana (2023.2.1) or newer.
 * **Android Device/Emulator:** Running API Level 24 (Nougat) or higher.
 * **Backend Server:** A running instance of the backend server.
-  * **Backend Repository:** [https://github.com/khang805/sociallyapp-backend-mysql]
+  * **Backend Repository:** [https://github.com/khang805/Sociallyapp-mysql-RestfulApis]
 
 ### Installation & Setup
 
