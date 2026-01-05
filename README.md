@@ -63,7 +63,30 @@ Follow these instructions to set up the project locally for development and test
 
 ### Installation & Setup
 
-**1. Clone the Repository**
+1. Clone the Repository
 ```bash
-git clone [https://github.com/your-username/socially-android.git](https://github.com/your-username/socially-android.git)
+git clone [(https://github.com/khang805/sociallyapp-backend-mysql.git)]
 cd socially-android
+
+2. Setup the Backend Server
+
+This app requires the backend server to be running.
+* Clone the backend repository:
+    ```bash
+    git clone [https://github.com/khang805/sociallyapp-backend-mysql.git](https://github.com/khang805/sociallyapp-backend-mysql.git)
+    ```
+* Follow the instructions in the backend `README` to import the MySQL database and start the server.
+
+3. Configure Backend Connectivity
+
+* Navigate to: `app/src/main/java/com/example/socially/api/RetrofitClient.kt`
+* Locate the `BASE_URL` constant.
+* Update the IP address to match your backend server:
+    * **If using Android Emulator:** Use `http://10.0.2.2:3000/` (or your server port).
+    * **If using a Physical Device:** Use your computer's local IP (e.g., `http://192.168.1.5:3000/`).
+
+4. Sync and Run
+
+* Open the project in **Android Studio**.
+* Let Gradle sync complete (it may take a few minutes).
+* Press **Run** to launch the app on your device or emulator.
